@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FBA9DFEE17EDE27900444187 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9DFED17EDE27900444187 /* Cocoa.framework */; };
+		FBA9DFF017EDE27900444187 /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9DFEF17EDE27900444187 /* AppleScriptObjC.framework */; };
+		FBA9DFFA17EDE27900444187 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBA9DFF817EDE27900444187 /* InfoPlist.strings */; };
+		FBA9DFFC17EDE27900444187 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA9DFFB17EDE27900444187 /* main.m */; };
+		FBA9E00017EDE27900444187 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBA9DFFE17EDE27900444187 /* Credits.rtf */; };
+		FBA9E00217EDE27900444187 /* AppDelegate.applescript in Sources */ = {isa = PBXBuildFile; fileRef = FBA9E00117EDE27900444187 /* AppDelegate.applescript */; };
+		FBA9E00517EDE27900444187 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA9E00317EDE27900444187 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FBA9DFEA17EDE27900444187 /* click.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = click.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBA9DFED17EDE27900444187 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FBA9DFEF17EDE27900444187 /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		FBA9DFF217EDE27900444187 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		FBA9DFF317EDE27900444187 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FBA9DFF417EDE27900444187 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FBA9DFF717EDE27900444187 /* click-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "click-Info.plist"; sourceTree = "<group>"; };
+		FBA9DFF917EDE27900444187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBA9DFFB17EDE27900444187 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBA9DFFD17EDE27900444187 /* click-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "click-Prefix.pch"; sourceTree = "<group>"; };
+		FBA9DFFF17EDE27900444187 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FBA9E00117EDE27900444187 /* AppDelegate.applescript */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.applescript; path = AppDelegate.applescript; sourceTree = "<group>"; };
+		FBA9E00417EDE27900444187 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBA9DFE717EDE27900444187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA9DFEE17EDE27900444187 /* Cocoa.framework in Frameworks */,
+				FBA9DFF017EDE27900444187 /* AppleScriptObjC.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBA9DFE117EDE27900444187 = {
+			isa = PBXGroup;
+			children = (
+				FBA9DFF517EDE27900444187 /* click */,
+				FBA9DFEC17EDE27900444187 /* Frameworks */,
+				FBA9DFEB17EDE27900444187 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBA9DFEB17EDE27900444187 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBA9DFEA17EDE27900444187 /* click.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBA9DFEC17EDE27900444187 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBA9DFED17EDE27900444187 /* Cocoa.framework */,
+				FBA9DFEF17EDE27900444187 /* AppleScriptObjC.framework */,
+				FBA9DFF117EDE27900444187 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBA9DFF117EDE27900444187 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBA9DFF217EDE27900444187 /* AppKit.framework */,
+				FBA9DFF317EDE27900444187 /* CoreData.framework */,
+				FBA9DFF417EDE27900444187 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		FBA9DFF517EDE27900444187 /* click */ = {
+			isa = PBXGroup;
+			children = (
+				FBA9E00117EDE27900444187 /* AppDelegate.applescript */,
+				FBA9E00317EDE27900444187 /* MainMenu.xib */,
+				FBA9DFF617EDE27900444187 /* Supporting Files */,
+			);
+			path = click;
+			sourceTree = "<group>";
+		};
+		FBA9DFF617EDE27900444187 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBA9DFF717EDE27900444187 /* click-Info.plist */,
+				FBA9DFF817EDE27900444187 /* InfoPlist.strings */,
+				FBA9DFFB17EDE27900444187 /* main.m */,
+				FBA9DFFD17EDE27900444187 /* click-Prefix.pch */,
+				FBA9DFFE17EDE27900444187 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBA9DFE917EDE27900444187 /* click */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBA9E00817EDE27900444187 /* Build configuration list for PBXNativeTarget "click" */;
+			buildPhases = (
+				FBA9DFE617EDE27900444187 /* Sources */,
+				FBA9DFE717EDE27900444187 /* Frameworks */,
+				FBA9DFE817EDE27900444187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = click;
+			productName = click;
+			productReference = FBA9DFEA17EDE27900444187 /* click.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBA9DFE217EDE27900444187 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Satoshi H";
+			};
+			buildConfigurationList = FBA9DFE517EDE27900444187 /* Build configuration list for PBXProject "click" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FBA9DFE117EDE27900444187;
+			productRefGroup = FBA9DFEB17EDE27900444187 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBA9DFE917EDE27900444187 /* click */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBA9DFE817EDE27900444187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA9DFFA17EDE27900444187 /* InfoPlist.strings in Resources */,
+				FBA9E00017EDE27900444187 /* Credits.rtf in Resources */,
+				FBA9E00517EDE27900444187 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBA9DFE617EDE27900444187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA9DFFC17EDE27900444187 /* main.m in Sources */,
+				FBA9E00217EDE27900444187 /* AppDelegate.applescript in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FBA9DFF817EDE27900444187 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBA9DFF917EDE27900444187 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FBA9DFFE17EDE27900444187 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBA9DFFF17EDE27900444187 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FBA9E00317EDE27900444187 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBA9E00417EDE27900444187 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBA9E00617EDE27900444187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FBA9E00717EDE27900444187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FBA9E00917EDE27900444187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "click/click-Prefix.pch";
+				INFOPLIST_FILE = "click/click-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FBA9E00A17EDE27900444187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "click/click-Prefix.pch";
+				INFOPLIST_FILE = "click/click-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBA9DFE517EDE27900444187 /* Build configuration list for PBXProject "click" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBA9E00617EDE27900444187 /* Debug */,
+				FBA9E00717EDE27900444187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBA9E00817EDE27900444187 /* Build configuration list for PBXNativeTarget "click" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBA9E00917EDE27900444187 /* Debug */,
+				FBA9E00A17EDE27900444187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBA9DFE217EDE27900444187 /* Project object */;
+}

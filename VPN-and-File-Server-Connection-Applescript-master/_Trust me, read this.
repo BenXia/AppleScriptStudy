@@ -1,0 +1,8 @@
+Instructions for the code are already in the documents.
+
+Setting up VPN Configuration Deployment Package (.mobileconfig)
+
+1. download an open with Xcode.
+2. read instructions such as --> /* REPLACE WITH SERVICE NAME FOR VPN SERVICE *\ should be replaced with VPNTestService
+3. find and copy path of Edit_Me.mobileconfig and set up for your user!
+

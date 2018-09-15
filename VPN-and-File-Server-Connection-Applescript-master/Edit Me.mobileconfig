@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>IPSec</key>
+			<dict>
+				<key>AuthenticationMethod</key>
+				<string>SharedSecret</string>
+				<key>SharedSecret</key>
+				<string>/* REPLACE WITH SHARED SECRET FOR VPN SERVICE *\</string>
+			</dict>
+			<key>IPv4</key>
+			<dict>
+				<key>OverridePrimary</key>
+				<integer>0</integer>
+			</dict>
+			<key>PPP</key>
+			<dict>
+				<key>CommRemoteAddress</key>
+				<string>/* REPLACE WITH SERVER ADDRESS FOR VPN SERVICE *\</string>
+			</dict>
+			<key>PayloadDescription</key>
+            <string>VPN settings for /* REPLACE WITH: NAME YOUR SERVICE *\</string>
+			<key>PayloadDisplayName</key>
+			<string>/* REPLACE WITH SERVICE NAME FOR VPN SERVICE *\ this will also be the service name in you code to connect to</string>
+			<key>PayloadIdentifier</key>
+			<string>net.nexal.connect.serverSettings.vpn.l2tp.vpn</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed</string>
+			<key>PayloadUUID</key>
+			<string>72F521C5-43F8-40E7-984E-FCF17700A996</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>UserDefinedName</key>
+			<string>/* REPLACE WITH SERVICE NAME FOR VPN SERVICE *\ this will also be the service name in you code to connect to</string>
+			<key>VPNType</key>
+			<string>L2TP</string>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>VPN settings for connect.nexal.net</string>
+	<key>PayloadDisplayName</key>
+	<string>/* REPLACE WITH NAME FOR VPN SERVICE *\</string>
+	<key>PayloadIdentifier</key>
+	<string>net.nexal.connect.serverSettings.vpn.l2tp</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>4729A050-4009-43BD-B287-F6393C10CEEF</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

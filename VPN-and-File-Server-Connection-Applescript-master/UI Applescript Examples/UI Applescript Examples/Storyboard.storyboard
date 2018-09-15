@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nk0-bJ-2Nw">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Rou-Je-J3Y">
+            <objects>
+                <windowController id="Nk0-bJ-2Nw" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Lqt-Ay-jpr">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="Nk0-bJ-2Nw" id="FFX-5W-SOb"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="0m8-qH-fUY" kind="relationship" relationship="window.shadowedContentViewController" id="HOC-PX-p6r"/>
+                    </connections>
+                </windowController>
+                <customObject id="XNa-ug-GDo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="90"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nLW-qe-f5y">
+            <objects>
+                <viewController id="0m8-qH-fUY" sceneMemberID="viewController">
+                    <view key="view" id="Oax-L3-Whv">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="341"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="h8i-Z7-xxG">
+                                <rect key="frame" x="163" y="237" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOy-Wd-bjh">
+                                <rect key="frame" x="321" y="149" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y4b-MG-4aH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="button3:" target="zAt-U9-rip" id="xTr-BG-LZR"/>
+                                </connections>
+                            </button>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xuQ-98-0oL">
+                                <rect key="frame" x="323" y="197" width="77" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="TMa-qT-YsU"/>
+                            </imageView>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="igV-pd-vhn">
+                                <rect key="frame" x="221" y="35" width="77" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sad" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="YVd-gk-uuR">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="imageButton:" target="zAt-U9-rip" id="mRx-Za-B7D"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUh-Rg-tHh">
+                                <rect key="frame" x="306" y="20" width="108" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="I'm Sad, Click Me" id="bcg-kr-pFU">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9e-N6-Uer">
+                                <rect key="frame" x="176" y="149" width="69" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ncK-bC-3pe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="button2:" target="zAt-U9-rip" id="AOy-5l-iF8"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-4g-d1k">
+                                <rect key="frame" x="110" y="149" width="70" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Start" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="90L-th-3AG">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="button1:" target="zAt-U9-rip" id="66l-cu-GHt"/>
+                                </connections>
+                            </button>
+                            <progressIndicator wantsLayer="YES" fixedFrame="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="UWa-ED-EaX">
+                                <rect key="frame" x="121" y="196" width="100" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <binding destination="zAt-U9-rip" name="value" keyPath="progressBar" id="ocT-Px-lAn"/>
+                                </connections>
+                            </progressIndicator>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-ec-qOf">
+                                <rect key="frame" x="309" y="283" width="103" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Im just an image" id="RHG-EJ-BbX">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="m1j-3a-V84" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="zAt-U9-rip" customClass="AppDelegate">
+                    <connections>
+                        <outlet property="MyProgressBar" destination="UWa-ED-EaX" id="aNP-cy-hmH"/>
+                        <outlet property="image1" destination="xuQ-98-0oL" id="wiT-iO-yri"/>
+                        <outlet property="imageButton1" destination="igV-pd-vhn" id="Xpm-ei-e29"/>
+                        <outlet property="label1" destination="AUh-Rg-tHh" id="fnQ-2L-3Yb"/>
+                        <outlet property="progressWheel" destination="h8i-Z7-xxG" id="Top-G5-gBK"/>
+                    </connections>
+                </customObject>
+                <customObject id="9EV-e1-8lv"/>
+                <menuItem title="Window" id="ZdD-D4-qju">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Window" systemMenu="window" id="Ta3-O0-mbT">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="bZC-ag-tkO">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="m1j-3a-V84" id="lTe-Ms-LNQ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="bBX-yT-Wsc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performZoom:" target="m1j-3a-V84" id="bmz-ck-eIi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="uOl-x6-YvE"/>
+                            <menuItem title="Bring All to Front" id="AWP-iC-zT0">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="arrangeInFront:" target="m1j-3a-V84" id="3Yg-JR-auI"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </objects>
+            <point key="canvasLocation" x="819" y="100.5"/>
+        </scene>
+        <!--Application-->
+        <scene sceneID="2q1-a6-hgE">
+            <objects>
+                <application id="2Xs-xT-c3M" sceneMemberID="viewController">
+                    <menu key="mainMenu" title="Main Menu" systemMenu="main" id="Lc2-eW-Jqq">
+                        <items>
+                            <menuItem title="UI Examples" id="yJj-1w-mhE">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="UI Examples" systemMenu="apple" id="U65-IM-ElM">
+                                    <items>
+                                        <menuItem title="Quit" keyEquivalent="q" id="Gnf-cc-WaZ"/>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="delegate" destination="zAt-U9-rip" id="dQB-hv-Ia4"/>
+                    </connections>
+                </application>
+                <customObject id="ahA-zw-2JV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="-120"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sad" width="409.60000610351562" height="409.60000610351562"/>
+    </resources>
+</document>

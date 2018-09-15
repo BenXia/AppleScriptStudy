@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSS</key>
+	<array>
+		<string>CSS: Parsing and Computation</string>
+		<string>DOM: CSS Object Model</string>
+		<string>Layout</string>
+		<string>Layout: Block and Inline</string>
+		<string>Layout: Floats</string>
+		<string>Layout: Images</string>
+		<string>Layout: Text</string>
+	</array>
+	<key>Media APIs</key>
+	<array>
+		<string>API: Web Audio</string>
+		<string>API: WebRTC</string>
+		<string>Audio/Video</string>
+		<string>Audio/Video: Playback</string>
+		<string>Audio/Video: Recording</string>
+		<string>AudioChannel</string>
+		<string>Video</string>
+		<string>Web Audio</string>
+		<string>WebRTC</string>
+		<string>WebRTC: Audio/Video</string>
+		<string>WebRTC: Networking</string>
+		<string>WebRTC: Signaling</string>
+	</array>
+</dict>
+</plist>
