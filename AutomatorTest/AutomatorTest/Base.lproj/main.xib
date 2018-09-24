@@ -1,11 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AutomatorTest">
             <connections>
+                <outlet property="calcButton" destination="ZTn-8N-2EX" id="tDF-AC-raC"/>
+                <outlet property="totalLabel" destination="wmc-On-t7r" id="oye-yw-wcF"/>
+                <outlet property="txtFieldOne" destination="Rae-k8-p6a" id="GSs-RM-hCN"/>
+                <outlet property="txtFieldTwo" destination="4kH-Vs-yP8" id="U40-og-Cn5"/>
                 <outlet property="view" destination="47Y-Ci-255" id="jdu-ND-x6j"/>
             </connections>
         </customObject>
@@ -15,18 +21,78 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" id="0xV-Dg-8dr">
-                    <rect key="frame" x="130" y="36" width="140" height="14"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="left" title="(* UI elements go here. *)" id="fhm-4k-jLL">
-                        <font key="font" metaFont="smallSystem"/>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rae-k8-p6a">
+                    <rect key="frame" x="20" y="32" width="96" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="y6A-aF-ewy">
+                        <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="aFj-Nx-tzi" name="value" keyPath="selection.leftNum" id="CsJ-hr-ZTQ">
+                            <dictionary key="options">
+                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="YES"/>
+                                <bool key="NSConditionallySetsEnabled" value="YES"/>
+                                <bool key="NSConditionallySetsHidden" value="YES"/>
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kH-Vs-yP8">
+                    <rect key="frame" x="136" y="32" width="96" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="rLL-LK-RGE">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="aFj-Nx-tzi" name="value" keyPath="selection.rightNum" id="YJt-y4-I7K">
+                            <dictionary key="options">
+                                <bool key="NSAlwaysPresentsApplicationModalAlerts" value="YES"/>
+                                <bool key="NSConditionallySetsEnabled" value="YES"/>
+                                <bool key="NSConditionallySetsHidden" value="YES"/>
+                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wmc-On-t7r">
+                    <rect key="frame" x="230" y="34" width="87" height="17"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="SNb-PO-Qjp">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="aFj-Nx-tzi" name="value" keyPath="selection.resultNum" id="FLc-dA-4lL"/>
+                    </connections>
                 </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZTn-8N-2EX">
+                    <rect key="frame" x="305" y="26" width="81" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KKu-Nq-Xsb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickCalcButton:" target="-2" id="Ufo-VC-ejj"/>
+                    </connections>
+                </button>
             </subviews>
+            <point key="canvasLocation" x="139" y="153.5"/>
         </customView>
-        <objectController id="aFj-Nx-tzi" userLabel="Parameters">
+        <objectController automaticallyPreparesContent="YES" id="aFj-Nx-tzi" userLabel="Parameters">
+            <declaredKeys>
+                <string>leftNum</string>
+                <string>rightNum</string>
+                <string>resultNum</string>
+            </declaredKeys>
             <connections>
                 <binding destination="-2" name="contentObject" keyPath="parameters" id="3tH-Nj-Jac"/>
             </connections>

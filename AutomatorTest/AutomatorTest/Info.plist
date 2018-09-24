@@ -14,15 +14,22 @@
 		</array>
 	</dict>
 	<key>AMApplication</key>
-	<string>(* Primary Application used by this action goes here. *)</string>
+	<string>Automator</string>
 	<key>AMCanShowSelectedItemsWhenRun</key>
-	<false/>
+	<true/>
 	<key>AMCanShowWhenRun</key>
 	<true/>
 	<key>AMCategory</key>
-	<string>(* Category of this action goes here. *)</string>
+	<string>Utility</string>
 	<key>AMDefaultParameters</key>
-	<dict/>
+	<dict>
+		<key>leftNum</key>
+		<string>2</string>
+		<key>rightNum</key>
+		<string>3</string>
+		<key>totoalNum</key>
+		<string>6</string>
+	</dict>
 	<key>AMDescription</key>
 	<dict>
 		<key>AMDAlert</key>
@@ -45,7 +52,7 @@
 		<string>(* AMDWebsite URL to additional information or documentation for the action goes here. (optional) *)</string>
 	</dict>
 	<key>AMIconName</key>
-	<string>(* The name of the icon *)</string>
+	<string>Action</string>
 	<key>AMKeywords</key>
 	<array/>
 	<key>AMName</key>
