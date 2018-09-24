@@ -1,0 +1,12 @@
+[submodule "External/shortcutrecorder"]
+	path = External/shortcutrecorder
+	url = https://github.com/iKorich/shortcutrecorder.git
+[submodule "External/peertalk"]
+	path = External/peertalk
+	url = https://github.com/rsms/peertalk.git
+[submodule "External/ImageSnap"]
+	path = External/ImageSnap
+	url = https://github.com/IGRSoft/ImageSnap.git
+[submodule "External/Sparkle"]
+	path = External/Sparkle
+	url = https://github.com/sparkle-project/Sparkle.git
