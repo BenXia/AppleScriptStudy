@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		33058B8F2159559000D63EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33058B8E2159559000D63EF8 /* main.m */; };
 		33058B97215955D100D63EF8 /* NewMailTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 33058B96215955D100D63EF8 /* NewMailTool.m */; };
+		B5A0740F2159E93B001BF797 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		33058B8E2159559000D63EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33058B95215955D100D63EF8 /* NewMailTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMailTool.h; sourceTree = "<group>"; };
 		33058B96215955D100D63EF8 /* NewMailTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMailTool.m; sourceTree = "<group>"; };
+		B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A0740F2159E93B001BF797 /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				33058B8D2159559000D63EF8 /* NewMail */,
 				33058B8C2159559000D63EF8 /* Products */,
+				B5A0740D2159E93B001BF797 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				33058B96215955D100D63EF8 /* NewMailTool.m */,
 			);
 			path = NewMail;
+			sourceTree = "<group>";
+		};
+		B5A0740D2159E93B001BF797 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

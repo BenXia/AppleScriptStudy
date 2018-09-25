@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1017518312EA47AC00C39ED0 /* SendMail.m in Sources */ = {isa = PBXBuildFile; fileRef = 1017518212EA47AC00C39ED0 /* SendMail.m */; };
+		1017519512EA494500C39ED0 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = 1017519412EA494500C39ED0 /* Mail.app */; };
+		1017519612EA49A100C39ED0 /* Mail.app in Sources */ = {isa = PBXBuildFile; fileRef = 1017519412EA494500C39ED0 /* Mail.app */; };
+		1017519A12EA49D900C39ED0 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1017519912EA49D900C39ED0 /* ScriptingBridge.framework */; };
+		1017526212EAFF5800C39ED0 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1017526112EAFF5800C39ED0 /* AppIcon.icns */; };
+		1017526912EB000600C39ED0 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1017526812EB000600C39ED0 /* Sparkle.framework */; };
+		1017527612EB003300C39ED0 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1017526812EB000600C39ED0 /* Sparkle.framework */; };
+		101752B512EB628000C39ED0 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 101752B412EB628000C39ED0 /* dsa_pub.pem */; };
+		1017545512EBA39F00C39ED0 /* Keychain_Access_Icon 20-56-52-327.png in Resources */ = {isa = PBXBuildFile; fileRef = 1017545412EBA39F00C39ED0 /* Keychain_Access_Icon 20-56-52-327.png */; };
+		101754A512EC450600C39ED0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 101754A412EC450600C39ED0 /* Credits.rtf */; };
+		101B187912F8BC3500765B69 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 101B187812F8BC3500765B69 /* PreferencesController.m */; };
+		10310B3812ED9E4900ABCAC1 /* PasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10310B3712ED9E4900ABCAC1 /* PasswordController.m */; };
+		103C7E4E12F2046F00A7C881 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103C7E4C12F2046F00A7C881 /* Preferences.xib */; };
+		1066043412E4FB0900B9695C /* KeyPropertys.m in Sources */ = {isa = PBXBuildFile; fileRef = 1066043312E4FB0900B9695C /* KeyPropertys.m */; };
+		10745E2E12F05B37006FD617 /* app.icns in Resources */ = {isa = PBXBuildFile; fileRef = 10745E2D12F05B37006FD617 /* app.icns */; };
+		10745E8D12F0A810006FD617 /* Software Update.icns in Resources */ = {isa = PBXBuildFile; fileRef = 10745E8C12F0A810006FD617 /* Software Update.icns */; };
+		107460CA12F1F800006FD617 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107460C912F1F800006FD617 /* AddressBook.framework */; };
+		10804A8312EE2FB100F591B4 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 10804A8212EE2FB100F591B4 /* EMKeychainItem.m */; };
+		10A7A4F812FCA7F8001C4873 /* DarkMain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10A7A4F712FCA7F8001C4873 /* DarkMain.xib */; };
+		10A7A4FF12FCC9EA001C4873 /* DarkMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A7A4FE12FCC9EA001C4873 /* DarkMainController.m */; };
+		10A8AF2212FC3A9300C89921 /* BWToolkitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A8AF2112FC3A9300C89921 /* BWToolkitFramework.framework */; };
+		10A8AF5412FC3ABD00C89921 /* BWToolkitFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 10A8AF2112FC3A9300C89921 /* BWToolkitFramework.framework */; };
+		10A8AF6812FC8BBF00C89921 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A8AF6712FC8BBF00C89921 /* BGHUDAppKit.framework */; };
+		10A8AF8B12FC8BDD00C89921 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 10A8AF6712FC8BBF00C89921 /* BGHUDAppKit.framework */; };
+		10AA089C12F9BDA60087E8C9 /* ExternalKeyTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AA089B12F9BDA60087E8C9 /* ExternalKeyTable.m */; };
+		10AA08A812F9BE300087E8C9 /* InternalKeyTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AA08A712F9BE300087E8C9 /* InternalKeyTable.m */; };
+		10AA0A7112FA167C0087E8C9 /* AddressBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AA0A7012FA167C0087E8C9 /* AddressBookController.m */; };
+		10BA3E0E12E8E648008E5E51 /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BA3E0C12E8E648008E5E51 /* libcrypto.dylib */; };
+		10BA3E0F12E8E648008E5E51 /* libssl.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BA3E0D12E8E648008E5E51 /* libssl.dylib */; };
+		10BA3E2112E8E739008E5E51 /* CryptBySSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 10BA3E2012E8E739008E5E51 /* CryptBySSCrypto.m */; };
+		10BA3E3B12E8EABF008E5E51 /* SSCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BA3E3A12E8EABF008E5E51 /* SSCrypto.framework */; };
+		10BA3E4012E8EAC5008E5E51 /* SSCrypto.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 10BA3E3A12E8EABF008E5E51 /* SSCrypto.framework */; };
+		10C673DD12E3970900F80368 /* KeyGenerate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C673DC12E3970900F80368 /* KeyGenerate.m */; };
+		10C6743412E39DD000F80368 /* KeyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C6743312E39DD000F80368 /* KeyTableView.m */; };
+		10CE5A1512FB1F1300E28775 /* ContactPropertys.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CE5A1412FB1F1300E28775 /* ContactPropertys.m */; };
+		10E9566912E0E53800EE2940 /* MainGUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E9566812E0E53800EE2940 /* MainGUIController.m */; };
+		10EC66C612EC6B3B00809979 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EC66C512EC6B3B00809979 /* Security.framework */; };
+		10EC684412ECA82800809979 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10EC684312ECA82800809979 /* MainMenu.xib */; };
+		256AC3DA0F4B6AC300CF3369 /* iRSAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* iRSAAppDelegate.m */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		1017518D12EA484700C39ED0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		10BA3E1412E8E675008E5E51 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				10A8AF8B12FC8BDD00C89921 /* BGHUDAppKit.framework in CopyFiles */,
+				10A8AF5412FC3ABD00C89921 /* BWToolkitFramework.framework in CopyFiles */,
+				1017527612EB003300C39ED0 /* Sparkle.framework in CopyFiles */,
+				10BA3E4012E8EAC5008E5E51 /* SSCrypto.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1017518112EA47AC00C39ED0 /* SendMail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMail.h; sourceTree = "<group>"; };
+		1017518212EA47AC00C39ED0 /* SendMail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMail.m; sourceTree = "<group>"; };
+		1017519412EA494500C39ED0 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = /Applications/Mail.app; sourceTree = "<absolute>"; };
+		1017519912EA49D900C39ED0 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		1017526112EAFF5800C39ED0 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		1017526812EB000600C39ED0 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		101752B412EB628000C39ED0 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		1017545412EBA39F00C39ED0 /* Keychain_Access_Icon 20-56-52-327.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Keychain_Access_Icon 20-56-52-327.png"; sourceTree = "<group>"; };
+		101754A412EC450600C39ED0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		101B187712F8BC3500765B69 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		101B187812F8BC3500765B69 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		10310B3612ED9E4900ABCAC1 /* PasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordController.h; sourceTree = "<group>"; };
+		10310B3712ED9E4900ABCAC1 /* PasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordController.m; sourceTree = "<group>"; };
+		103C7E4C12F2046F00A7C881 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		1066043212E4FB0900B9695C /* KeyPropertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyPropertys.h; sourceTree = "<group>"; };
+		1066043312E4FB0900B9695C /* KeyPropertys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyPropertys.m; sourceTree = "<group>"; };
+		10745E2D12F05B37006FD617 /* app.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = app.icns; sourceTree = "<group>"; };
+		10745E8C12F0A810006FD617 /* Software Update.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Software Update.icns"; sourceTree = "<group>"; };
+		107460C912F1F800006FD617 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = /System/Library/Frameworks/AddressBook.framework; sourceTree = "<absolute>"; };
+		10804A8112EE2FB100F591B4 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		10804A8212EE2FB100F591B4 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		10A7A4F712FCA7F8001C4873 /* DarkMain.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DarkMain.xib; sourceTree = "<group>"; };
+		10A7A4FD12FCC9EA001C4873 /* DarkMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkMainController.h; sourceTree = "<group>"; };
+		10A7A4FE12FCC9EA001C4873 /* DarkMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkMainController.m; sourceTree = "<group>"; };
+		10A8AF2112FC3A9300C89921 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWToolkitFramework.framework; path = Applications/BWToolkit/BWToolkitFramework.framework; sourceTree = DEVELOPER_DIR; };
+		10A8AF6712FC8BBF00C89921 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BGHUDAppKit.framework; path = Applications/BGHUDAppKit.framework; sourceTree = DEVELOPER_DIR; };
+		10AA089A12F9BDA60087E8C9 /* ExternalKeyTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExternalKeyTable.h; sourceTree = "<group>"; };
+		10AA089B12F9BDA60087E8C9 /* ExternalKeyTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExternalKeyTable.m; sourceTree = "<group>"; };
+		10AA08A612F9BE300087E8C9 /* InternalKeyTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InternalKeyTable.h; sourceTree = "<group>"; };
+		10AA08A712F9BE300087E8C9 /* InternalKeyTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InternalKeyTable.m; sourceTree = "<group>"; };
+		10AA0A6F12FA167C0087E8C9 /* AddressBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookController.h; sourceTree = "<group>"; };
+		10AA0A7012FA167C0087E8C9 /* AddressBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookController.m; sourceTree = "<group>"; };
+		10BA3E0C12E8E648008E5E51 /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libcrypto.dylib; sourceTree = "<group>"; };
+		10BA3E0D12E8E648008E5E51 /* libssl.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libssl.dylib; sourceTree = "<group>"; };
+		10BA3E1F12E8E739008E5E51 /* CryptBySSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptBySSCrypto.h; sourceTree = "<group>"; };
+		10BA3E2012E8E739008E5E51 /* CryptBySSCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptBySSCrypto.m; sourceTree = "<group>"; };
+		10BA3E3A12E8EABF008E5E51 /* SSCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SSCrypto.framework; sourceTree = "<group>"; };
+		10C673DB12E3970900F80368 /* KeyGenerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyGenerate.h; sourceTree = "<group>"; };
+		10C673DC12E3970900F80368 /* KeyGenerate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyGenerate.m; sourceTree = "<group>"; };
+		10C6743212E39DD000F80368 /* KeyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyTableView.h; sourceTree = "<group>"; };
+		10C6743312E39DD000F80368 /* KeyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyTableView.m; sourceTree = "<group>"; };
+		10CE5A1312FB1F1300E28775 /* ContactPropertys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPropertys.h; sourceTree = "<group>"; };
+		10CE5A1412FB1F1300E28775 /* ContactPropertys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPropertys.m; sourceTree = "<group>"; };
+		10E9566712E0E53800EE2940 /* MainGUIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGUIController.h; sourceTree = "<group>"; };
+		10E9566812E0E53800EE2940 /* MainGUIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainGUIController.m; sourceTree = "<group>"; };
+		10EC66C512EC6B3B00809979 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		10EC684312ECA82800809979 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		10EC687112ECBAD700809979 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		256AC3D80F4B6AC300CF3369 /* iRSAAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRSAAppDelegate.h; sourceTree = "<group>"; };
+		256AC3D90F4B6AC300CF3369 /* iRSAAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRSAAppDelegate.m; sourceTree = "<group>"; };
+		256AC3F00F4B6AF500CF3369 /* iRSA_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRSA_Prefix.pch; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* iRSA-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iRSA-Info.plist"; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* iRSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				10BA3E0E12E8E648008E5E51 /* libcrypto.dylib in Frameworks */,
+				10BA3E0F12E8E648008E5E51 /* libssl.dylib in Frameworks */,
+				10BA3E3B12E8EABF008E5E51 /* SSCrypto.framework in Frameworks */,
+				1017519A12EA49D900C39ED0 /* ScriptingBridge.framework in Frameworks */,
+				1017526912EB000600C39ED0 /* Sparkle.framework in Frameworks */,
+				10EC66C612EC6B3B00809979 /* Security.framework in Frameworks */,
+				107460CA12F1F800006FD617 /* AddressBook.framework in Frameworks */,
+				10A8AF2212FC3A9300C89921 /* BWToolkitFramework.framework in Frameworks */,
+				10A8AF6812FC8BBF00C89921 /* BGHUDAppKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3D80F4B6AC300CF3369 /* iRSAAppDelegate.h */,
+				256AC3D90F4B6AC300CF3369 /* iRSAAppDelegate.m */,
+				10E9566712E0E53800EE2940 /* MainGUIController.h */,
+				10E9566812E0E53800EE2940 /* MainGUIController.m */,
+				10C6743212E39DD000F80368 /* KeyTableView.h */,
+				10C6743312E39DD000F80368 /* KeyTableView.m */,
+				10AA08A612F9BE300087E8C9 /* InternalKeyTable.h */,
+				10AA08A712F9BE300087E8C9 /* InternalKeyTable.m */,
+				10AA089A12F9BDA60087E8C9 /* ExternalKeyTable.h */,
+				10AA089B12F9BDA60087E8C9 /* ExternalKeyTable.m */,
+				101B187712F8BC3500765B69 /* PreferencesController.h */,
+				101B187812F8BC3500765B69 /* PreferencesController.m */,
+				10A7A4FD12FCC9EA001C4873 /* DarkMainController.h */,
+				10A7A4FE12FCC9EA001C4873 /* DarkMainController.m */,
+				10C673DB12E3970900F80368 /* KeyGenerate.h */,
+				10C673DC12E3970900F80368 /* KeyGenerate.m */,
+				10BA3E1F12E8E739008E5E51 /* CryptBySSCrypto.h */,
+				10BA3E2012E8E739008E5E51 /* CryptBySSCrypto.m */,
+				1066043212E4FB0900B9695C /* KeyPropertys.h */,
+				1066043312E4FB0900B9695C /* KeyPropertys.m */,
+				10310B3612ED9E4900ABCAC1 /* PasswordController.h */,
+				10310B3712ED9E4900ABCAC1 /* PasswordController.m */,
+				10AA0A6F12FA167C0087E8C9 /* AddressBookController.h */,
+				10AA0A7012FA167C0087E8C9 /* AddressBookController.m */,
+				10CE5A1312FB1F1300E28775 /* ContactPropertys.h */,
+				10CE5A1412FB1F1300E28775 /* ContactPropertys.m */,
+				1017518112EA47AC00C39ED0 /* SendMail.h */,
+				1017518212EA47AC00C39ED0 /* SendMail.m */,
+				10804A8112EE2FB100F591B4 /* EMKeychainItem.h */,
+				10804A8212EE2FB100F591B4 /* EMKeychainItem.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10A8AF6712FC8BBF00C89921 /* BGHUDAppKit.framework */,
+				10A8AF2112FC3A9300C89921 /* BWToolkitFramework.framework */,
+				1017526812EB000600C39ED0 /* Sparkle.framework */,
+				107460C912F1F800006FD617 /* AddressBook.framework */,
+				10BA3E3A12E8EABF008E5E51 /* SSCrypto.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				1017519912EA49D900C39ED0 /* ScriptingBridge.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10EC66C512EC6B3B00809979 /* Security.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* iRSA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* iRSA */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = iRSA;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				256AC3F00F4B6AF500CF3369 /* iRSA_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				10EC687112ECBAD700809979 /* Globals.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				103C7E4C12F2046F00A7C881 /* Preferences.xib */,
+				10EC684312ECA82800809979 /* MainMenu.xib */,
+				10A7A4F712FCA7F8001C4873 /* DarkMain.xib */,
+				1017519412EA494500C39ED0 /* Mail.app */,
+				10745E2D12F05B37006FD617 /* app.icns */,
+				101752B412EB628000C39ED0 /* dsa_pub.pem */,
+				10745E8C12F0A810006FD617 /* Software Update.icns */,
+				101754A412EC450600C39ED0 /* Credits.rtf */,
+				1017526112EAFF5800C39ED0 /* AppIcon.icns */,
+				10BA3E0C12E8E648008E5E51 /* libcrypto.dylib */,
+				10BA3E0D12E8E648008E5E51 /* libssl.dylib */,
+				1017545412EBA39F00C39ED0 /* Keychain_Access_Icon 20-56-52-327.png */,
+				8D1107310486CEB800E47090 /* iRSA-Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* iRSA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iRSA" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				10BA3E1412E8E675008E5E51 /* CopyFiles */,
+			);
+			buildRules = (
+				1017518D12EA484700C39ED0 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = iRSA;
+			productInstallPath = "$(HOME)/Applications";
+			productName = iRSA;
+			productReference = 8D1107320486CEB800E47090 /* iRSA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iRSA" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* iRSA */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* iRSA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				1017519512EA494500C39ED0 /* Mail.app in Resources */,
+				1017526212EAFF5800C39ED0 /* AppIcon.icns in Resources */,
+				101752B512EB628000C39ED0 /* dsa_pub.pem in Resources */,
+				1017545512EBA39F00C39ED0 /* Keychain_Access_Icon 20-56-52-327.png in Resources */,
+				101754A512EC450600C39ED0 /* Credits.rtf in Resources */,
+				10EC684412ECA82800809979 /* MainMenu.xib in Resources */,
+				10745E2E12F05B37006FD617 /* app.icns in Resources */,
+				10745E8D12F0A810006FD617 /* Software Update.icns in Resources */,
+				103C7E4E12F2046F00A7C881 /* Preferences.xib in Resources */,
+				10A7A4F812FCA7F8001C4873 /* DarkMain.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1017519612EA49A100C39ED0 /* Mail.app in Sources */,
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				256AC3DA0F4B6AC300CF3369 /* iRSAAppDelegate.m in Sources */,
+				10E9566912E0E53800EE2940 /* MainGUIController.m in Sources */,
+				10C673DD12E3970900F80368 /* KeyGenerate.m in Sources */,
+				10C6743412E39DD000F80368 /* KeyTableView.m in Sources */,
+				1066043412E4FB0900B9695C /* KeyPropertys.m in Sources */,
+				10BA3E2112E8E739008E5E51 /* CryptBySSCrypto.m in Sources */,
+				1017518312EA47AC00C39ED0 /* SendMail.m in Sources */,
+				10310B3812ED9E4900ABCAC1 /* PasswordController.m in Sources */,
+				10804A8312EE2FB100F591B4 /* EMKeychainItem.m in Sources */,
+				101B187912F8BC3500765B69 /* PreferencesController.m in Sources */,
+				10AA089C12F9BDA60087E8C9 /* ExternalKeyTable.m in Sources */,
+				10AA08A812F9BE300087E8C9 /* InternalKeyTable.m in Sources */,
+				10AA0A7112FA167C0087E8C9 /* AddressBookController.m in Sources */,
+				10CE5A1512FB1F1300E28775 /* ContactPropertys.m in Sources */,
+				10A7A4FF12FCC9EA001C4873 /* DarkMainController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(DEVELOPER_DIR)/Applications/BWToolkit\"",
+					"\"$(DEVELOPER_DIR)/Applications\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iRSA_Prefix.pch;
+				INFOPLIST_FILE = "iRSA-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = iRSA;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(DEVELOPER_DIR)/Applications/BWToolkit\"",
+					"\"$(DEVELOPER_DIR)/Applications\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iRSA_Prefix.pch;
+				INFOPLIST_FILE = "iRSA-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = iRSA;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iRSA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iRSA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
