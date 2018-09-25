@@ -8,28 +8,63 @@
 
 /* Begin PBXBuildFile section */
 		33058B8F2159559000D63EF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 33058B8E2159559000D63EF8 /* main.m */; };
-		33058B97215955D100D63EF8 /* NewMailTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 33058B96215955D100D63EF8 /* NewMailTool.m */; };
 		B5A0740F2159E93B001BF797 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */; };
+		B5A07460215A2437001BF797 /* XPCScriptingBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A0745F215A2437001BF797 /* XPCScriptingBridge.m */; };
+		B5A07462215A2437001BF797 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A07461215A2437001BF797 /* main.m */; };
+		B5A0746C215A2515001BF797 /* XPCScriptingBridge.xpc in Copy Files */ = {isa = PBXBuildFile; fileRef = B5A0745B215A2436001BF797 /* XPCScriptingBridge.xpc */; };
+		B5A0746F215A2552001BF797 /* Mail.app in Resources */ = {isa = PBXBuildFile; fileRef = B5A0746E215A2552001BF797 /* Mail.app */; };
+		B5A07471215A2650001BF797 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		33058B892159559000D63EF8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
+/* Begin PBXBuildRule section */
+		B5A07470215A25D5001BF797 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.app";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			script = "sdef \"$INPUT_FILE_PATH\" | sdp -fh -o \"$DERIVED_FILES_DIR\" --basename \"$INPUT_FILE_BASE\" --bundleid `defaults read \"$INPUT_FILE_PATH/Contents/Info\" CFBundleIdentifier`\n";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		B5A07467215A2454001BF797 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33058B832159559000D63EF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5A0745A215A2436001BF797;
+			remoteInfo = XPCScriptingBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		33058B892159559000D63EF8 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices/..";
+			dstSubfolderSpec = 16;
+			files = (
+				B5A0746C215A2515001BF797 /* XPCScriptingBridge.xpc in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		33058B8B2159559000D63EF8 /* NewMail */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewMail; sourceTree = BUILT_PRODUCTS_DIR; };
 		33058B8E2159559000D63EF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		33058B95215955D100D63EF8 /* NewMailTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMailTool.h; sourceTree = "<group>"; };
-		33058B96215955D100D63EF8 /* NewMailTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMailTool.m; sourceTree = "<group>"; };
 		B5A0740E2159E93B001BF797 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		B5A0745B215A2436001BF797 /* XPCScriptingBridge.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = XPCScriptingBridge.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A0745D215A2436001BF797 /* XPCScriptingBridgeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCScriptingBridgeProtocol.h; sourceTree = "<group>"; };
+		B5A0745E215A2437001BF797 /* XPCScriptingBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XPCScriptingBridge.h; sourceTree = "<group>"; };
+		B5A0745F215A2437001BF797 /* XPCScriptingBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPCScriptingBridge.m; sourceTree = "<group>"; };
+		B5A07461215A2437001BF797 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5A07463215A2437001BF797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A0746E215A2552001BF797 /* Mail.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Mail.app; path = ../../../../../../../../../../../Applications/Mail.app; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +76,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5A07458215A2436001BF797 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A07471215A2650001BF797 /* ScriptingBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				33058B8D2159559000D63EF8 /* NewMail */,
+				B5A0745C215A2436001BF797 /* XPCScriptingBridge */,
 				33058B8C2159559000D63EF8 /* Products */,
 				B5A0740D2159E93B001BF797 /* Frameworks */,
 			);
@@ -57,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				33058B8B2159559000D63EF8 /* NewMail */,
+				B5A0745B215A2436001BF797 /* XPCScriptingBridge.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,8 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				33058B8E2159559000D63EF8 /* main.m */,
-				33058B95215955D100D63EF8 /* NewMailTool.h */,
-				33058B96215955D100D63EF8 /* NewMailTool.m */,
 			);
 			path = NewMail;
 			sourceTree = "<group>";
@@ -79,6 +122,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B5A0745C215A2436001BF797 /* XPCScriptingBridge */ = {
+			isa = PBXGroup;
+			children = (
+				B5A0746D215A2541001BF797 /* Applications */,
+				B5A0745D215A2436001BF797 /* XPCScriptingBridgeProtocol.h */,
+				B5A0745E215A2437001BF797 /* XPCScriptingBridge.h */,
+				B5A0745F215A2437001BF797 /* XPCScriptingBridge.m */,
+				B5A07461215A2437001BF797 /* main.m */,
+				B5A07463215A2437001BF797 /* Info.plist */,
+			);
+			path = XPCScriptingBridge;
+			sourceTree = "<group>";
+		};
+		B5A0746D215A2541001BF797 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				B5A0746E215A2552001BF797 /* Mail.app */,
+			);
+			name = Applications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,16 +152,35 @@
 			buildPhases = (
 				33058B872159559000D63EF8 /* Sources */,
 				33058B882159559000D63EF8 /* Frameworks */,
-				33058B892159559000D63EF8 /* CopyFiles */,
+				33058B892159559000D63EF8 /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B5A07468215A2454001BF797 /* PBXTargetDependency */,
 			);
 			name = NewMail;
 			productName = NewMail;
 			productReference = 33058B8B2159559000D63EF8 /* NewMail */;
 			productType = "com.apple.product-type.tool";
+		};
+		B5A0745A215A2436001BF797 /* XPCScriptingBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5A07466215A2437001BF797 /* Build configuration list for PBXNativeTarget "XPCScriptingBridge" */;
+			buildPhases = (
+				B5A07459215A2436001BF797 /* Resources */,
+				B5A07457215A2436001BF797 /* Sources */,
+				B5A07458215A2436001BF797 /* Frameworks */,
+			);
+			buildRules = (
+				B5A07470215A25D5001BF797 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = XPCScriptingBridge;
+			productName = XPCScriptingBridge;
+			productReference = B5A0745B215A2436001BF797 /* XPCScriptingBridge.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +192,9 @@
 				ORGANIZATIONNAME = iOSStudio;
 				TargetAttributes = {
 					33058B8A2159559000D63EF8 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					B5A0745A215A2436001BF797 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -126,9 +212,21 @@
 			projectRoot = "";
 			targets = (
 				33058B8A2159559000D63EF8 /* NewMail */,
+				B5A0745A215A2436001BF797 /* XPCScriptingBridge */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5A07459215A2436001BF797 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A0746F215A2552001BF797 /* Mail.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		33058B872159559000D63EF8 /* Sources */ = {
@@ -136,11 +234,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				33058B8F2159559000D63EF8 /* main.m in Sources */,
-				33058B97215955D100D63EF8 /* NewMailTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5A07457215A2436001BF797 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5A07462215A2437001BF797 /* main.m in Sources */,
+				B5A07460215A2437001BF797 /* XPCScriptingBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5A07468215A2454001BF797 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5A0745A215A2436001BF797 /* XPCScriptingBridge */;
+			targetProxy = B5A07467215A2454001BF797 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		33058B902159559000D63EF8 /* Debug */ = {
@@ -270,6 +384,30 @@
 			};
 			name = Release;
 		};
+		B5A07464215A2437001BF797 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XPCScriptingBridge/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Ben.XPCScriptingBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B5A07465215A2437001BF797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = XPCScriptingBridge/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Ben.XPCScriptingBridge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -287,6 +425,15 @@
 			buildConfigurations = (
 				33058B932159559000D63EF8 /* Debug */,
 				33058B942159559000D63EF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5A07466215A2437001BF797 /* Build configuration list for PBXNativeTarget "XPCScriptingBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5A07464215A2437001BF797 /* Debug */,
+				B5A07465215A2437001BF797 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
