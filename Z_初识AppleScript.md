@@ -159,17 +159,23 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   end repeat
   
   set counter to 0
-  repeat while counter != 10
-      display dialog counter as string
-      set counter to counter + 2
+  set listToSet to {}
+  -- 注意下这个 ≠ 符号是使用 Option+= 输入的
+  repeat while counter ≠ 10
+  	-- display dialog counter as string
+  	set listToSet to listToSet & counter
+  	set counter to counter + 2
   end repeat
-  get counter
+  get listToSet
   
   set counter to 0
+  set listToSet to {}
   repeat until counter = 10
-      display dialog counter as string
+      -- display dialog counter as string
+      set listToSet to listToSet & counter
       set counter to counter + 2
   end repeat
+  get listToSet
   
   set aList to { 1, 2, 8 }
   repeat with anItem in aList
@@ -212,10 +218,17 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
 - 使用AppleScript中的对话框
 
+  > 使用弹出框有一些要注意的地方:
+  >
+  > * 1.它可以有多个按钮的;
+  > * 2.它是有返回值的,返回值是你最终操作的字符串;
+  > * 3.它是可以增加输入框的，而且比你想的简单多了;
+
   ```
-  setdialogString to"Input a number here"
+  set dialogString to "Input a number here"
   set returnedString to display dialog dialogString default answer ""
-  
+  get returnedString
+  //{button returned:"好", text returned:"asdf"}
   
   set dialogString to "Input a number here"
   set returnedString to display dialog dialogString default answer ""
@@ -225,110 +238,74 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   	set calNumber to returnedNumber * 100
   	display dialog calNumber
   on error the error_message number the error_number
-  	display dialog "Error:" &; the error_number &; " Details:" &; the error_message
+  	display dialog "Error:" & the error_number & " Details:" & the error_message
   end try
   beep
   ```
 
-- 使用mac的邮件系统
-
-  ```
-  --Variables
-  set recipientName to " 小红"
-  set recipientAddress to "aliyunzixun@xxx.com"
-  set theSubject to "AppleScript Automated Email"
-  set theContent to "This email was created and sent using AppleScript!"
-  --Mail Tell Block
-  tell application "Mail"
-  --Create the message
-  set theMessage to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
-  --Set a recipient
-  tell theMessage
-  make new to recipient with properties {name:recipientName, address:recipientAddress}
-  --Send the Message
-  send
-  end tell
-  end tell
-  ```
-
-- 让浏览器打开网页
-
-  ```
-  set urlMyBlog to "http://blog.csdn.net/u011238629"
-  set urlKuaiso to "http://so.chongbuluo.com/"
-  set urlChinaSearch to "http://www.chinaso.com"
-  set urlBiying to "https://cn.bing.com"
-  
-  --使用Chrome浏览器
-  tell application "Google Chrome"
-  	--新建一个chrome窗口
-  	set window1 to make new window
-  	tell window1
-  		--当前标签页加载必应,就是不用百度哈哈
-  		set currTab to active tab of window1
-  		set URL of currTab to urlBiying
-  		--打开csdn博客,搜索
-  		make new tab with properties {URL:urlMyBlog}
-  		make new tab with properties {URL:urlChinaSearch}
-  		make new tab with properties {URL:urlKuaiso}
-  		--将焦点由最后一个打开的标签页还给首个标签页
-  		set active tab index of window1 to 1
-  	end tell
-  end tell
-  
-  ```
-
-- 让你的电脑说话
-
-  ```
-  tell current application
-  say "How are you?" using "Zarvox"
-  say "Fine,thank you." using "Victoria"
-  say "Ha Ha"
-  --嘟嘟响一声
-  beep
-  end tell
-  ```
-
-- 清理废纸篓
-
-  ```
-  tell application "Finder"
-  empty the trash
-  beep
-  open the startup disk
-  end tell
-  ```
-
 - 预定义变量
 
-  就是一些特殊的关键字,类似于其他语言中的self,return等,有固定的含义;千万不要用它来自定义变量。
-  result:记录最近一个命令执行的结果,如果命令没有结果,那么将会得到错误
-  it:指代最近的一个tell对象
-  me:这指代段脚本。用法举例path to me返回本脚本所在绝对路径
-  tab:用于string,一个制表位
-  return:用于string,一个换行
+  > 就是一些特殊的关键字，类似于其他语言中的 self、return等，有固定的含义；
+  >
+  > 千万不要用它来自定义变量。
+
+  - **result**：记录最近一个命令执行的结果，如果命令没有结果，那么将会得到错误
+
+  - **it**：指代最近的一个 tell 对象
+
+  - **me**：这指代段脚本。用法举例 path to me 返回本脚本所在绝对路径
+
+  - **tab**：用于string，一个制表位
+
+  - **return**：用于string，一个换行
+
+- 字符串比较：Considering/Ignoring语句
+
+  在 AppleScript 的字符串比较方式中，你可以设定比较的方式：上面 considering 和 ignoring 含义都是清晰的，一个用于加上xx特征，一个用于忽略某个特征；一个特征就是一个attribute。
+  atrribute应该为列表中的任意一个:
+
+  - **case** 大小写
+  - **diacriticals** 字母变调符号(如e和é)
+  - **hyphens** 连字符(-)
+  - **numeric strings** 数字化字符串(默认是忽略的)，用于比较版本号时启用它。
+  - **punctuation** 标点符号(,.?!等等,包括中文标点)
+  - **white space** 空格
+
+          ```
+  ignoring case
+  	if "AAA" = "aaa" then
+  		display alert "AAA equal aaa when ignoring case"
+  	end if
+  end ignoring
+  
+  considering numeric strings
+  	if "10.3" > "9.3" then
+  		display alert "10.3 > 9.3"
+  	end if
+  end considering
+          ```
 
 - 列表选择对话框
 
-​      AppleScript是有选择对话框的,想想也是应有之义;下面是一个最简单的选择框:
+  ```
+  display alert "这是一个警告" message "这是警告的内容" as warning
+  
+  choose from list {"选项1", "选项2", "选项3"} with title "选择框" with prompt "请选择选项"
+  ```
 
-```
-display alert "这是一个警告" message "你上学迟到了" as warningchoose from list {"这是第一个妞", "dsfggf"} with title "选择框" with prompt "请选择选项"
-```
+  选择框有以下参数:
 
+  - 直接参数 紧跟list类型参数，包含所有备选项
 
+  - **title** 紧跟text，指定对话框的标题
 
-> 选择框有以下参数:
->   直接参数 紧跟list类型参数,包含所有备选项
->   title 紧跟text,指定对话框的标题
->   prompt 紧跟text,指定提示信息
->   default items 紧跟list,指定默认选择的项目
->   empty selection allowed 后紧跟true表示允许不选
->
->  multiple selections allowed 后紧跟true表示允许多选
+  - **prompt** 紧跟text，指定提示信息
 
+  - **default items** 紧跟list，指定默认选择的项目
 
+  - **empty selection allowed** 后紧跟true表示允许不选
+
+  - **multiple selections allowed** 后紧跟true表示允许多选
 
 - 文件选择对话框
 
@@ -345,38 +322,149 @@ display alert "这是一个警告" message "你上学迟到了" as warningchoose
 
 - 文件读取和写入
 
-  > 文件读取用read,允许直接读取;但是写入文件之前必须先打开文件,打开文件是open for access FileName,写入文件用write...to语句,最后记得关闭文件close access filePoint。
+  > 文件读取用read，允许直接读取；
+  >
+  > 但是写入文件之前必须先打开文件，打开文件是open for access FileName；
+  >
+  > 写入文件用write...to语句；
+  >
+  > 最后记得关闭文件close access filePoint
 
   ```
-  set myFile to alias "Macintosh HD:Users:Nathan:Desktop:example.txt" 
+  set myFile to alias "Macintosh HD:Users:xiaxuqiang:Desktop:example.txt"
   read myFile
-  set aFile to alias "Macintosh HD:Users:Nathan:Desktop:example.txt" 
-  set fp to open for access aFile with write permission 
-  write "abc" to fp 
+  set aFile to alias "Macintosh HD:Users:xiaxuqiang:Desktop:example.txt"
+  set fp to open for access aFile with write permission
+  write "AppleScript写入文本" to fp
   close access fp
   
   
   --在桌面上创建一个文件,内部包含一个txt文件,并向txt内插入文件
   on createMyTxt()
-      make new folder at desktop with properties {name:"star"}
-      make new file at folder "star" of desktop with properties {name:"star.txt"}
+  	tell application "Finder"
+  		make new folder at desktop with properties {name:"star"}
+  		make new file at folder "star" of desktop with properties {name:"star.txt"}
+  	end tell
   end createMyTxt
-      
+  
   --向txt文件内写入内容
-  on writeTextToFile() 
-      set txtFile to alias "Macintosh HD:Users:star:Desktop:star:star.txt" 
-      set fp to open for access txtFile with write permission 
-      write "你好,这是一个txt文件" to fp 
-      close access fp
+  on writeTextToFile()
+  	set txtFile to alias "Macintosh HD:Users:xiaxuqiang:Desktop:star:star.txt"
+  	set fp to open for access txtFile with write permission
+  	write "你好,这是一个txt文件" to fp as «class utf8»
+  	close access fp
   end writeTextToFile
   
   createMyTxt()
   
   writeTextToFile()
+  
+  
+  ```
+
+### 案例列举
+
+----------
+- 使用 mac 的邮件系统
+
+  ```
+  --Variables
+  set recipientName to " 小红"
+  set recipientAddress to "aliyunzixun@xxx.com"
+  set theSubject to "AppleScript Automated Email"
+  set theContent to "This email was created and sent using AppleScript!"
+  --Mail Tell Block
+  tell application "Mail"
+  	--Create the message
+  	set theMessage to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
+  	--Set a recipient
+  	tell theMessage
+  		make new to recipient with properties {name:recipientName, address:recipientAddress}
+  		--Send the Message
+  		send
+  	end tell
+  end tell
+  ```
+
+- 让浏览器打开网页
+
+  ```
+  set urlMyBlog to "https://blog.csdn.net/sodaslay"
+  set urlChinaSearch to "http://www.chinaso.com"
+  set urlBiying to "https://cn.bing.com"
+  
+  --使用Chrome浏览器
+  tell application "Google Chrome"
+  	--新建一个chrome窗口
+  	set window1 to make new window
+  	tell window1
+  		--当前标签页加载必应,就是不用百度哈哈
+  		set currTab to active tab of window1
+  		set URL of currTab to urlBiying
+  		--打开csdn博客,搜索
+  		make new tab with properties {URL:urlMyBlog}
+  		make new tab with properties {URL:urlChinaSearch}
+  		--将焦点由最后一个打开的标签页还给首个标签页
+  		set active tab index of window1 to 1
+  	end tell
+  end tell
+  
+  ```
+
+- 让你的电脑说话
+
+  ```
+  -- You can use any of the voices from the System Voice pop-up on the Text to Speech tab in the Speech preferences pane.
+  -- Default Value:
+  -- The current System Voice (set in the Speech panel in System Preferences.
+  
+  tell current application
+  	say "My name is LiMei. Nice to meet you. How are you?" using "Veena"
+  	say "Fine, thanks. And you?" using "Victoria"
+  	say "滚"
+  	say "我跟你说" using "Sin-Ji"
+  end tell
+  
+  beep
+  ```
+
+- 调用 mac 的通知中心
+
+  > crontab + AppleScript + 通知中心 可以做很多定制的提醒工具
+
+  ```
+  display notification "message" with title "title" subtitle "subtitle"
+  
+  display notification "message" sound name "Bottle.aiff"
+  -- 声音文件都在 ~/Library/Sounds 和 /System/Library/Sounds 下面
+  ```
+
+- 清理废纸篓
+
+  ```
+  tell application "Finder"
+  	empty the trash
+  	beep
+  	open the startup disk
+  end tell
   ```
 
 
-### 生成一些 Cocoa App 的 OC 接口文件
+
+###  何时使用？
+
+-------
+
+- 一些跨应用的重复操作步骤使用 AppleScript/JavaScript 实现关键步骤
+- 结合 Alread.app、Automator.app、crontab 等实现一些场景的触发调用
+- 本地的一些工具脚本可以直接调用 AppleScript 做一些简单的输入、弹框、通知交互
+- 用 AppleScript 写一个 CocoaApp 或者 Automator Action（**但是可以用 Objective-C 我们就没必要使用相对不熟悉的 AppleScript**）
+- OC 的命令行工程可以借助 NSAppleScript 操作其它应用
+- CocoaApp 工程可以通过 XPCService+ScriptingBridge+AppleScript(OC版本接口调用)
+
+
+
+### 生成 Cocoa App 的 OC 接口文件
 
 -----------------
 
