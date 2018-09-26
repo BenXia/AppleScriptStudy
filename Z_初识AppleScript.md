@@ -34,10 +34,346 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
 -----------------
 
+- 基本数据类型
+
+  > AppleScript有4种最基本的数据类型：number、string、list和record，分别对应编程概念中的数值、字符串、数组和字典。
+
+  - number 类型
+
+    ```AppleScript
+    set x to 2
+    get x
+    set y to 3
+    get y
+    set xy to x * y
+    set x3 to y ^ 3
+    ```
+
+  - string 类型
+
+    ```AppleScript
+    set strX to "Hello "
+    set strY to "AppleScript"
+    
+    -- 字符串拼接
+    set strXY to strX & strY
+    -- 获取字符串长度
+    set lengthOfStrXY to the length of strXY
+    
+    -- 分割成单个字符并组成一个新的列表
+    set charList to every character of strXY
+    
+    -- 通过 AppleScript's text item delimiters 来指定分隔号，然后通过 every text item of 来实现分割
+    set defaultDelimiters to AppleScript's text item delimiters
+    set AppleScript's text item delimiters to " "
+    set listAfterDelimiter to every text item of strXY
+    set AppleScript's text item delimiters to defaultDelimiters
+    
+    
+    -- number 与 string 类型转换
+    set numberToString to 100 as string
+    set stringToNumber to "1234" as number
+    ```
+
+  - list 类型
+
+    ```AppleScript
+    set firstList to { 100, 200.0, "djfif", -10 }
+    set emptyList to {}
+    set currentList to { 2, 3, 4, 5 }
+    
+    -- 列表拼接
+    set modifiedList to firstList & emptyList & currentList
+    
+    -- 获取和更改列表中的元素
+    set item 2 of modifiedList to "2"
+    get modifiedList
+    set the third item of modifiedList to "abcde"
+    get modifiedList
+    
+    -- 用列表中的随机元素赋值
+    set randomX to some item of modifiedList
+    
+    -- 获取最后一个元素
+    set lastItem to the last item of modifiedList
+    
+    -- 负数表示从列表尾端开始获取元素
+    set aLastItem to item -2 of modifiedList
+    
+    -- 获取第一个元素
+    set firstItem to the first item of modifiedList
+    
+    set longList to { 1,2,3,4,5,6,7,8,9,10 }
+    set shortList to items 6 through 8 of longList
+    
+    -- 逆向获取子列表
+    set reversedList to reverse of longList
+    set listCount to the count of longList
+    set the end of longList to 5
+    get longList
+    
+    -- 将 string 转换为 list
+    set string1 to "string1"
+    set stringList to string1 as list
+    
+    -- 可以用&将字符串和列表连接起来，结果取决于&前面的变量
+    set strAndList to string1 & stringList
+    ```
+
+  - record 类型
+
+    ```
+    set aRecord to { name1:100, name2:"This is a record"}
+    set valueOfName1 to the name1 of aRecord
+    
+    set newRecord to { name1:name1 of aRecord }
+    
+    set numberOfProperties to the count of aRecord
+    ```
+
+- 条件/循环
+
+  ```AppleScript
+  set x to 500
+  
+  if x > 100 then
+  	display alert "x > 100"
+  else if x > 10 then
+      display alert "x > 10"
+  else
+      display alert "x <= 10"
+  end if
+  
+  
+  set sum to 0
+  set i to 0
+  repeat 100 times
+      set i to i + 1
+      set sum to sum + i
+  end repeat
+  get sum
+  
+  
+  repeat with counter from 0 to 10 by 2
+      display dialog counter
+  end repeat
+  
+  set counter to 0
+  repeat while counter != 10
+      display dialog counter as string
+      set counter to counter + 2
+  end repeat
+  get counter
+  
+  set counter to 0
+  repeat until counter = 10
+      display dialog counter as string
+      set counter to counter + 2
+  end repeat
+  
+  set aList to { 1, 2, 8 }
+  repeat with anItem in aList
+      display dialog anItem as string
+  end repeat
+  ```
+
+- 注释
+
+  ```AppleScript
+  -- 这是单行的注释
+  
+  (*
+  这是多行的注释
+  这是多行的注释
+  *)
+  ```
+
+- 函数
+
+  ```AppleScript
+  on showAlert(alertStr)
+  	display alert alertStr buttons {"I know", "Cancel"} default button "I know"
+  end showAlert
+  
+  showAlert("hello world")
+  ```
+
+- 换行
+
+  ```AppleScript
+  -- 键盘使用组合键 Option+L 输入'¬' 可以实现代码折行
+  on showAlert(alertStr)
+  	display alert alertStr ¬
+  		buttons {"I know", "Cancel"} default button "I know"
+  end showAlert
+  
+  showAlert("hello world")
+  ```
+
+- 使用AppleScript中的对话框
+
+  ```
+  setdialogString to"Input a number here"
+  set returnedString to display dialog dialogString default answer ""
+  
+  
+  set dialogString to "Input a number here"
+  set returnedString to display dialog dialogString default answer ""
+  set returnedNumber to the text returned of returnedString
+  try
+  	set returnedNumber to returnedNumber as number
+  	set calNumber to returnedNumber * 100
+  	display dialog calNumber
+  on error the error_message number the error_number
+  	display dialog "Error:" &; the error_number &; " Details:" &; the error_message
+  end try
+  beep
+  ```
+
+- 使用mac的邮件系统
+
+  ```
+  --Variables
+  set recipientName to " 小红"
+  set recipientAddress to "aliyunzixun@xxx.com"
+  set theSubject to "AppleScript Automated Email"
+  set theContent to "This email was created and sent using AppleScript!"
+  --Mail Tell Block
+  tell application "Mail"
+  --Create the message
+  set theMessage to make new outgoing message with properties {subject:theSubject, content:theContent, visible:true}
+  --Set a recipient
+  tell theMessage
+  make new to recipient with properties {name:recipientName, address:recipientAddress}
+  --Send the Message
+  send
+  end tell
+  end tell
+  ```
+
+- 让浏览器打开网页
+
+  ```
+  set urlMyBlog to "http://blog.csdn.net/u011238629"
+  set urlKuaiso to "http://so.chongbuluo.com/"
+  set urlChinaSearch to "http://www.chinaso.com"
+  set urlBiying to "https://cn.bing.com"
+  
+  --使用Chrome浏览器
+  tell application "Google Chrome"
+  	--新建一个chrome窗口
+  	set window1 to make new window
+  	tell window1
+  		--当前标签页加载必应,就是不用百度哈哈
+  		set currTab to active tab of window1
+  		set URL of currTab to urlBiying
+  		--打开csdn博客,搜索
+  		make new tab with properties {URL:urlMyBlog}
+  		make new tab with properties {URL:urlChinaSearch}
+  		make new tab with properties {URL:urlKuaiso}
+  		--将焦点由最后一个打开的标签页还给首个标签页
+  		set active tab index of window1 to 1
+  	end tell
+  end tell
+  
+  ```
+
+- 让你的电脑说话
+
+  ```
+  tell current application
+  say "How are you?" using "Zarvox"
+  say "Fine,thank you." using "Victoria"
+  say "Ha Ha"
+  --嘟嘟响一声
+  beep
+  end tell
+  ```
+
+- 清理废纸篓
+
+  ```
+  tell application "Finder"
+  empty the trash
+  beep
+  open the startup disk
+  end tell
+  ```
+
+- 预定义变量
+
+  就是一些特殊的关键字,类似于其他语言中的self,return等,有固定的含义;千万不要用它来自定义变量。
+  result:记录最近一个命令执行的结果,如果命令没有结果,那么将会得到错误
+  it:指代最近的一个tell对象
+  me:这指代段脚本。用法举例path to me返回本脚本所在绝对路径
+  tab:用于string,一个制表位
+  return:用于string,一个换行
+
+- 列表选择对话框
+
+​      AppleScript是有选择对话框的,想想也是应有之义;下面是一个最简单的选择框:
+
+```
+display alert "这是一个警告" message "你上学迟到了" as warningchoose from list {"这是第一个妞", "dsfggf"} with title "选择框" with prompt "请选择选项"
+```
 
 
 
+> 选择框有以下参数:
+>   直接参数 紧跟list类型参数,包含所有备选项
+>   title 紧跟text,指定对话框的标题
+>   prompt 紧跟text,指定提示信息
+>   default items 紧跟list,指定默认选择的项目
+>   empty selection allowed 后紧跟true表示允许不选
+>
+>  multiple selections allowed 后紧跟true表示允许多选
 
+
+
+- 文件选择对话框
+
+  ```
+  -- 选取文件名称Choose File Name
+  choose file name with prompt "指定提示信息"
+  
+  -- 选取文件夹Choose Folder
+  choose folder with prompt "指定提示信息" default location file "Macintosh HD:Users" with invisibles, multiple selections allowed and showing package contents
+  
+  -- 选取文件Choose File
+  choose file of type {"txt"}
+  ```
+
+- 文件读取和写入
+
+  > 文件读取用read,允许直接读取;但是写入文件之前必须先打开文件,打开文件是open for access FileName,写入文件用write...to语句,最后记得关闭文件close access filePoint。
+
+  ```
+  set myFile to alias "Macintosh HD:Users:Nathan:Desktop:example.txt" 
+  read myFile
+  set aFile to alias "Macintosh HD:Users:Nathan:Desktop:example.txt" 
+  set fp to open for access aFile with write permission 
+  write "abc" to fp 
+  close access fp
+  
+  
+  --在桌面上创建一个文件,内部包含一个txt文件,并向txt内插入文件
+  on createMyTxt()
+      make new folder at desktop with properties {name:"star"}
+      make new file at folder "star" of desktop with properties {name:"star.txt"}
+  end createMyTxt
+      
+  --向txt文件内写入内容
+  on writeTextToFile() 
+      set txtFile to alias "Macintosh HD:Users:star:Desktop:star:star.txt" 
+      set fp to open for access txtFile with write permission 
+      write "你好,这是一个txt文件" to fp 
+      close access fp
+  end writeTextToFile
+  
+  createMyTxt()
+  
+  writeTextToFile()
+  ```
 
 
 ### 生成一些 Cocoa App 的 OC 接口文件
