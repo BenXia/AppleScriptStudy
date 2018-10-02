@@ -122,7 +122,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
   - record 类型
 
-    ```
+    ```AppleScript
     set aRecord to { name1:100, name2:"This is a record"}
     set valueOfName1 to the name1 of aRecord
     
@@ -224,7 +224,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   > * 2.它是有返回值的,返回值是你最终操作的字符串;
   > * 3.它是可以增加输入框的，而且比你想的简单多了;
 
-  ```
+  ```AppleScript
   set dialogString to "Input a number here"
   set returnedString to display dialog dialogString default answer ""
   get returnedString
@@ -240,6 +240,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   on error the error_message number the error_number
   	display dialog "Error:" & the error_number & " Details:" & the error_message
   end try
+  
   beep
   ```
 
@@ -271,19 +272,19 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   - **punctuation** 标点符号(,.?!等等,包括中文标点)
   - **white space** 空格
 
-          ```
-  ignoring case
-  	if "AAA" = "aaa" then
-  		display alert "AAA equal aaa when ignoring case"
-  	end if
-  end ignoring
-  
-  considering numeric strings
-  	if "10.3" > "9.3" then
-  		display alert "10.3 > 9.3"
-  	end if
-  end considering
-          ```
+      ```AppleScript
+      ignoring case
+        if "AAA" = "aaa" then
+            display alert "AAA equal aaa when ignoring case"
+        end if
+      end ignoring
+      
+      considering numeric strings
+        if "10.3" > "9.3" then
+            display alert "10.3 > 9.3"
+        end if
+      end considering
+      ```
 
 - 列表选择对话框
 
@@ -296,20 +297,15 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   选择框有以下参数:
 
   - 直接参数 紧跟list类型参数，包含所有备选项
-
   - **title** 紧跟text，指定对话框的标题
-
   - **prompt** 紧跟text，指定提示信息
-
   - **default items** 紧跟list，指定默认选择的项目
-
   - **empty selection allowed** 后紧跟true表示允许不选
-
   - **multiple selections allowed** 后紧跟true表示允许多选
 
 - 文件选择对话框
 
-  ```
+  ```AppleScript
   -- 选取文件名称Choose File Name
   choose file name with prompt "指定提示信息"
   
@@ -330,7 +326,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   >
   > 最后记得关闭文件close access filePoint
 
-  ```
+  ```AppleScript
   set myFile to alias "Macintosh HD:Users:xiaxuqiang:Desktop:example.txt"
   read myFile
   set aFile to alias "Macintosh HD:Users:xiaxuqiang:Desktop:example.txt"
@@ -362,12 +358,18 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
   
   ```
 
+- 其它语法
+
+  上面的例子只是苹果官方文档的精简入门版，还有语言的面相对象特征，此处不再展开。
+
+  AppleScript 中还有比较丰富的其它 Command 集合，此处也不再一一列举。
+
 ### 案例列举
 
 ----------
 - 使用 mac 的邮件系统
 
-  ```
+  ```AppleScript
   --Variables
   set recipientName to " 小红"
   set recipientAddress to "aliyunzixun@xxx.com"
@@ -388,7 +390,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
 - 让浏览器打开网页
 
-  ```
+  ```AppleScript
   set urlMyBlog to "https://blog.csdn.net/sodaslay"
   set urlChinaSearch to "http://www.chinaso.com"
   set urlBiying to "https://cn.bing.com"
@@ -413,7 +415,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
 - 让你的电脑说话
 
-  ```
+  ```AppleScript
   -- You can use any of the voices from the System Voice pop-up on the Text to Speech tab in the Speech preferences pane.
   -- Default Value:
   -- The current System Voice (set in the Speech panel in System Preferences.
@@ -432,7 +434,7 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
   > crontab + AppleScript + 通知中心 可以做很多定制的提醒工具
 
-  ```
+  ```AppleScript
   display notification "message" with title "title" subtitle "subtitle"
   
   display notification "message" sound name "Bottle.aiff"
@@ -441,15 +443,215 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 
 - 清理废纸篓
 
-  ```
+  ```AppleScript
   tell application "Finder"
   	empty the trash
   	beep
+  	-- 打开启动磁盘
   	open the startup disk
   end tell
   ```
 
+- 模拟键盘按键消息
 
+  ```AppleScript
+  launch application "System Events"
+  launch application "TextMate"
+  tell application "System Events"
+  	set frontmost of process "TextMate" to true
+  	keystroke "input string from applescript"
+  	keystroke "a" using command down
+  	keystroke "c" using command down
+  	keystroke "a" using command down
+  	key code 124 using command down
+  	keystroke "
+  "
+  	keystroke "v" using command down
+  end tell
+  ```
+
+  > 其中 using command 可以使用组合，例如：key code 53 using {command down, option down}
+  >
+  > 其中的 key code 对照表如下
+
+  ```
+  apple key code list:
+  
+  0 0x00 ANSI_A
+  1 0x01 ANSI_S
+  2 0x02 ANSI_D
+  3 0x03 ANSI_F
+  4 0x04 ANSI_H
+  5 0x05 ANSI_G
+  6 0x06 ANSI_Z
+  7 0x07 ANSI_X
+  8 0x08 ANSI_C
+  9 0x09 ANSI_V
+  10 0x0A ISO_Section
+  11 0x0B ANSI_B
+  12 0x0C ANSI_Q
+  13 0x0D ANSI_W
+  14 0x0E ANSI_E
+  15 0x0F ANSI_R
+  16 0x10 ANSI_Y
+  17 0x11 ANSI_T
+  18 0x12 ANSI_1
+  19 0x13 ANSI_2
+  20 0x14 ANSI_3
+  21 0x15 ANSI_4
+  22 0x16 ANSI_6
+  23 0x17 ANSI_5
+  24 0x18 ANSI_Equal
+  25 0x19 ANSI_9
+  26 0x1A ANSI_7
+  27 0x1B ANSI_Minus
+  28 0x1C ANSI_8
+  29 0x1D ANSI_0
+  30 0x1E ANSI_RightBracket
+  31 0x1F ANSI_O
+  32 0x20 ANSI_U
+  33 0x21 ANSI_LeftBracket
+  34 0x22 ANSI_I
+  35 0x23 ANSI_P
+  36 0x24 Return
+  37 0x25 ANSI_L
+  38 0x26 ANSI_J
+  39 0x27 ANSI_Quote
+  40 0x28 ANSI_K
+  41 0x29 ANSI_Semicolon
+  42 0x2A ANSI_Backslash
+  43 0x2B ANSI_Comma
+  44 0x2C ANSI_Slash
+  45 0x2D ANSI_N
+  46 0x2E ANSI_M
+  47 0x2F ANSI_Period
+  48 0x30 Tab
+  49 0x31 Space
+  50 0x32 ANSI_Grave
+  51 0x33 Delete
+  53 0x35 Escape
+  55 0x37 Command
+  56 0x38 Shift
+  57 0x39 CapsLock
+  58 0x3A Option
+  59 0x3B Control
+  60 0x3C RightShift
+  61 0x3D RightOption
+  62 0x3E RightControl
+  63 0x3F Function
+  64 0x40 F17
+  65 0x41 ANSI_KeypadDecimal
+  67 0x43 ANSI_KeypadMultiply
+  69 0x45 ANSI_KeypadPlus
+  71 0x47 ANSI_KeypadClear
+  72 0x48 VolumeUp
+  73 0x49 VolumeDown
+  74 0x4A Mute
+  75 0x4B ANSI_KeypadDivide
+  76 0x4C ANSI_KeypadEnter
+  78 0x4E ANSI_KeypadMinus
+  79 0x4F F18
+  80 0x50 F19
+  81 0x51 ANSI_KeypadEquals
+  82 0x52 ANSI_Keypad0
+  83 0x53 ANSI_Keypad1
+  84 0x54 ANSI_Keypad2
+  85 0x55 ANSI_Keypad3
+  86 0x56 ANSI_Keypad4
+  87 0x57 ANSI_Keypad5
+  88 0x58 ANSI_Keypad6
+  89 0x59 ANSI_Keypad7
+  90 0x5A F20
+  91 0x5B ANSI_Keypad8
+  92 0x5C ANSI_Keypad9
+  93 0x5D JIS_Yen
+  94 0x5E JIS_Underscore
+  95 0x5F JIS_KeypadComma
+  96 0x60 F5
+  97 0x61 F6
+  98 0x62 F7
+  99 0x63 F3
+  100 0x64 F8
+  101 0x65 F9
+  102 0x66 JIS_Eisu
+  103 0x67 F11
+  104 0x68 JIS_Kana
+  105 0x69 F13
+  106 0x6A F16
+  107 0x6B F14
+  109 0x6D F10
+  111 0x6F F12
+  113 0x71 F15
+  114 0x72 Help
+  115 0x73 Home
+  116 0x74 PageUp
+  117 0x75 ForwardDelete
+  118 0x76 F4
+  119 0x77 End
+  120 0x78 F2
+  121 0x79 PageDown
+  122 0x7A F1
+  123 0x7B LeftArrow
+  124 0x7C RightArrow
+  125 0x7D DownArrow
+  126 0x7E UpArrow
+  ```
+
+- 切换程序前台、设置焦点窗口
+
+  ```AppleScript
+  -- 前提是当前 iTerm app 中打开了两个窗口，其中有个窗口名字叫 "2. bash" 并且该窗口中第一个 tab 中含有三个 session，本脚本的作用是让 "2. bash" 窗口中第一个 tab 中的第三个 session 变为焦点。
+  tell the application "iTerm"
+  	activate
+  	
+  	set theWindow to the first item of ¬
+  		(get the windows whose name is "2. bash")
+  	if index of theWindow is not 1 then
+  		set index of theWindow to 1
+  		
+  		set visible of theWindow to false
+  		set visible of theWindow to true
+  	end if
+  	
+  	tell theWindow
+  		set theTab to the first item of theWindow's tabs
+  		
+  		select theTab
+  		
+  		select the third session of theTab
+  	end tell
+  end tell
+  ```
+
+  ```AppleScript
+  -- 下面是上面的逻辑的另一种实现
+  tell the application "iTerm"
+  	activate
+  	
+  	set theWindow to the first item of ¬
+  		(get the windows whose name is "2. bash")
+  	if the index of theWindow is not 1 then
+  		set the index of theWindow to 2
+  		tell application "System Events" to ¬
+  			tell application process "iTerm2" to ¬
+  				keystroke "`" using command down
+  	end if
+  end tell
+  ```
+
+- 粘贴板操作
+
+  ```AppleScript
+  set the clipboard to "Add this sentence at the end."
+  tell application "TextEdit"
+  	activate --make sure TextEdit is running
+  	make new paragraph at end of document 1 with data (return & (the clipboard))
+  end tell
+  ```
+
+
+
+  上面的例子都是一些比较简单的例子，还有很多有趣的例子可以自己根据需要，查询词典中涉及到的 App 的 AppleScript 接口自己做实现。关于如何使用 App 的 AppleScript 的词典，建议阅读[Mac 的自动化 AppleScript 终极入门手册](https://wenku.baidu.com/view/41c783c3aa00b52acfc7ca09.html)
 
 ###  何时使用？
 
@@ -460,14 +662,13 @@ MacOS 上有自带的脚本编辑器，目前支持 AppleScript 和 JavaScript�
 - 本地的一些工具脚本可以直接调用 AppleScript 做一些简单的输入、弹框、通知交互
 - 用 AppleScript 写一个 CocoaApp 或者 Automator Action（**但是可以用 Objective-C 我们就没必要使用相对不熟悉的 AppleScript**）
 - OC 的命令行工程可以借助 NSAppleScript 操作其它应用
-- CocoaApp 工程可以通过 XPCService+ScriptingBridge+AppleScript(OC版本接口调用)
+- CocoaApp 工程可以通过 XPCService+ScriptingBridge+AppleScript(OC版本接口调用)启动其它应用([样例工程](https://github.com/BenXia/AppleScriptStudy/tree/master/5_快发邮件OC版本))
 
 
 
 ### 生成 Cocoa App 的 OC 接口文件
-
 -----------------
-
+> 需要通过 OC 调用系统中某个 App 的接口，可以参照如下命令行导出其 .h 文件
 
 ```Shell
 sdef /Applications/Mail.app | sdp -fh -o ~/Desktop --basename Mail --bundleid `defaults read "/Applications/Mail.app/Contents/Info" CFBundleIdentifier`
